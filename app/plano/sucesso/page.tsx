@@ -74,7 +74,12 @@ export default function PlanoSucessoPage() {
             <Download />
             Baixar PDF
           </Button>
-          <Button variant="success" onClick={() => window.print()}>
+          <Button variant="success" onClick={async () => {
+            const plan = await getSafetyPlan();
+            if (!plan) { setDownloadError(true); return; }
+            setDownloadError(false);
+            generateSafetyPlanPdf(plan);
+          }}>
             <Printer />
             Imprimir Plano
           </Button>
