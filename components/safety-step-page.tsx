@@ -222,38 +222,29 @@ export function SafetyStepPage({ stepSlug }: SafetyStepPageProps) {
                     ))}
 
                     {/* Checkbox "Outros" com textarea condicional */}
-                    <div className="rounded-lg border bg-slate-50 p-4">
-                      <label className="flex min-h-11 items-start gap-3 rounded-md bg-white p-3 text-sm text-slate-700 shadow-sm">
-                        <input
-                          type="checkbox"
-                          checked={othersChecked}
-                          onChange={(event) =>
-                            setOthersChecked(event.target.checked)
-                          }
-                          className="mt-0.5 size-4 rounded border-slate-300 accent-primary"
-                        />
-                        <span className="font-medium">Outros</span>
-                      </label>
-                      {othersChecked && (
-                        <div className="mt-3 flex items-start gap-2">
-                          <Textarea
-                            id="warningSignalsOthers"
-                            value={othersText}
-                            placeholder="Descreva outros sinais de alerta que você observa..."
-                            onChange={(event) =>
-                              setOthersText(event.target.value)
-                            }
-                            className="mt-3"
-                          />
+                    <div className="rounded-lg border bg-slate-50">
+                      <div className="flex flex-col pb-4 pl-4 pr-4"  >
+                        <div className="flex items-center justify-between gap-2 pt-2">
+                          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                            Outros
+                          </p>
                           <VoiceInputButton
                             onTranscript={(text) =>
                               setOthersText((current) =>
                                 current ? `${current} ${text}` : text,
                               )
                             }
+                            className="mb-1"
                           />
                         </div>
-                      )}
+                        <Textarea
+                          id="warningSignalsOthers"
+                          value={othersText}
+                          placeholder="Descreva outros sinais de alerta que você observa..."
+                          onChange={(event) => setOthersText(event.target.value)}
+                          className="bg-white"
+                        />
+                      </div>
                     </div>
                   </div>
                 ) : suggestions ? (

@@ -9,14 +9,9 @@ import { basePath } from "@/lib/base-path";
 
 const actions = [
   {
-    title: "Pacientes",
-    href: "/busca",
-    icon: Users,
-  },
-  {
-    title: "Motivos para Viver",
-    href: "/motivos",
-    icon: ClipboardPenLine,
+    title: "Instruções",
+    href: "/ajuda",
+    icon: HandHeart,
   },
   {
     title: "Plano de Segurança",
@@ -24,14 +19,9 @@ const actions = [
     icon: ShieldCheck,
   },
   {
-    title: "Registro de Humor",
-    href: "/registro",
-    icon: Save,
-  },
-  {
-    title: "Instruções",
-    href: "/ajuda",
-    icon: HandHeart,
+    title: "Motivos para Viver",
+    href: "/motivos",
+    icon: ClipboardPenLine,
   },
 ];
 
